@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Student Grade Generator</h2>
+
+        <p id="demo">Grade: </p> 
+        <input type="text" id="grade">
+        <button onclick="gradeGenerator()">generate grade</button>
+
+         <script>
+         
+         // let grade;
+
+         //function that returns grade
+          function gradeGenerator(event){
+            //when reloading the page will be at its default
+            event.preventDefault();
+         //getting the value in the input area
+            var text=document.getElementById("grade").value;
+
+            let mark = parseFloat(text);
+
+            let valueGrade = " ";
+
+            //condition statement
+            if (mark > 79 && mark <= 100){
+               valueGrade = "A";
+            } else if (mark >= 60 && mark < 80) {
+               valueGrade = "B";
+            } else if (mark <= 50 && mark <= 59) {
+               valueGrade = "C";
+            } else if (mark >= 40 && mark <= 49) {
+               valueGrade = "D";
+            } else if (mark >= 0 && mark <40) {
+               valueGrade = "E";
+            } else{
+                valueGrade = "enter valid grade";
+            }
+            return document.querySelector("#demo").innerHTML = `Grade: ${valueGrade}`
+        }
+        gradeGenerator()
+
+        // document.getElementById("demo").innerHTML = grade;
+         </script>
+    </body>
+</html>
